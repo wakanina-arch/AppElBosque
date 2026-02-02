@@ -1,16 +1,23 @@
-# React + Vite
+# AppElBosque
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a AppElBosque!
 
-Currently, two official plugins are available:
+Esta es una aplicación en desarrollo para gestionar y ofrecer servicios locales (restaurantes, peluquerías, etc.) en la comunidad El Bosque.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ¿Cómo probar la app?
 
-## React Compiler
+1. **Haz clic en el botón verde "Code" y luego en "Download ZIP" para descargar el proyecto a tu computadora.**
+2. **Descomprime el archivo ZIP en una carpeta.**
+3. **Envíame un mensaje o avísame cuando lo tengas listo para que te ayude a abrirlo y probarlo.**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+> Si tienes dudas o necesitas reponer productos, solo avísame y te guío paso a paso. No necesitas saber de programación.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+**Contacto técnico:** Edgar Jara Gomez
+
+---
+
+¡Gracias por tu colaboración y feedback!
