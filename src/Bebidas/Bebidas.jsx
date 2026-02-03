@@ -1,31 +1,29 @@
-import React, { useState } from "react";
-import CarruselBebidas from "./CarruselBebidas";
+import React,{ useState } from "react";
 import "./Bebidas.css";
 import "../Pizzas/aniadido.css";
 
-import cocaCola from '../assets/5. Bebidas/Coca Cola.png';
-import fanta from '../assets/5. Bebidas/Fanta.png';
-import pepsi from '../assets/5. Bebidas/Pepsi .png';
-import guarana from '../assets/5. Bebidas/Guaraná.png';
-import club from '../assets/5. Bebidas/Cerveza Club.png';
-import heineken from '../assets/5. Bebidas/Cerveza Heineken.png';
-import cerveza from '../assets/5. Bebidas/Cerveza Guinness.png';
-import agua from '../assets/5. Bebidas/Agua mineral.png';
-import zumoDeFrutas from '../assets/5. Bebidas/Zumo de frutas.png';
-import zumosVerdes from '../assets/5. Bebidas/Zumos Verdes.png';
+import cocaCola from '../assets/5. Bebidas/CocaCola.jpg';
+import fanta from '../assets/5. Bebidas/Fanta.jpg';
+import pepsi from '../assets/5. Bebidas/Pepsi.jpg';
+import guarana from '../assets/5. Bebidas/Guarana.jpg';
+import club from '../assets/5. Bebidas/CervezaClub.jpg';
+import heineken from '../assets/5. Bebidas/CervezaHeineken.jpg';
+import cerveza from '../assets/5. Bebidas/CervezaGuinness.jpg';
+import agua from '../assets/5. Bebidas/AguaMineral.jpg';
+import zumoDeFrutas from '../assets/5. Bebidas/ZumoDeFrutas.jpg';
+import zumosVerdes from '../assets/5. Bebidas/ZumosVerdes.jpg';
 
+// Función para restar un dólar al precio
 function restarUnDolar(valor) {
-  // Extrae el número del string, resta 1 y devuelve el nuevo string con formato de precio
-  const numero = parseFloat(valor.replace(/[^\d.]/g, ''));
-  const nuevoNumero = Math.max(0, numero - 1);
-  return `$${nuevoNumero.toFixed(2)}`;
+  const num = parseFloat(valor.replace(/[^\d.]/g, ''));
+  return `$${(num - 1).toFixed(2)}`;
 }
 
 export default function Bebidas({ agregarAlCarrito }) {
   const [aniadido, setAniadido] = useState(false);
   const bebidas = [
     {
-      nombre: "Coca Cola",
+      nombre: "CocaCola",
       img: cocaCola,
       valor: "$1.99",
       caracteristicas: "Refresco clásico con sabor inconfundible."
@@ -43,56 +41,69 @@ export default function Bebidas({ agregarAlCarrito }) {
       caracteristicas: "Refresco con un sabor audaz y refrescante."
     },
     {
-      nombre: "Guaraná",
+      nombre: "Guarana",
       img: guarana,
       valor: "$2.09",
       caracteristicas: "Refresco brasileño hecho con guaraná natural."
     },
     {
-      nombre: "Cerveza Club",
+      nombre: "CervezaClub",
       img: club,
       valor: "$2.99",
       caracteristicas: "Cerveza rubia colombiana con sabor suave."
     },
     {
-      nombre: "Cerveza Heineken",
+      nombre: "CervezaHeineken",
       img: heineken,
       valor: "$3.49",
       caracteristicas: "Cerveza premium de origen holandés."
     },
     {
-      nombre: "Cerveza Guinness",
+      nombre: "CervezaGuinness",
       img: cerveza,
       valor: "$3.99",
       caracteristicas: "Cerveza negra irlandesa con sabor intenso."
     },
     {
-      nombre: "Agua Mineral",
+      nombre: "AguaMineral",
       img: agua,
       valor: "$0.99",
       caracteristicas: "Agua mineral natural sin gas."
     },
     {
-      nombre: "Zumo de Frutas",
+      nombre: "ZumoDeFrutas",
       img: zumoDeFrutas,
       valor: "$2.49",
       caracteristicas: "Zumo natural de frutas variadas."
     },
     {
-      nombre: "Zumos Verdes",
+      nombre: "ZumosVerdes",
       img: zumosVerdes,
       valor: "$2.69",
       caracteristicas: "Zumo saludable hecho con vegetales y frutas verdes."
     }
   ];
-
+ 
   const [seleccionada, setSeleccionada] = useState(null);
     const [tamano, setTamano] = useState('grande');
   
     return (
       <>
         <h2>Elige tu Bebida</h2>
-        <CarruselBebidas bebidas={bebidas} onSelect={setSeleccionada} seleccionada={seleccionada} />
+       <div className="bebidas-container">
+        {bebidas.map((bebida, idx) => (
+          <div
+            key={bebida.nombre}
+            className={
+              'bebidas-frame' + (seleccionada === idx ? ' selected' : '')
+            }
+            onClick={() => setSeleccionada(idx)}
+          >
+            <span style={{ marginBottom: '0.5rem', color: '#0c0b0b', fontWeight: 600, fontSize: '1.1rem', textAlign: 'center' }}>{bebida.nombre}</span>
+            <img src={bebida.img} alt={bebida.nombre + ' Bebida'} />
+          </div>
+        ))}
+      </div>
   
         {/* Modal de detalles de bebida  */}
         {seleccionada !== null && (
@@ -219,4 +230,3 @@ export default function Bebidas({ agregarAlCarrito }) {
       </>
     );
   }
-  
