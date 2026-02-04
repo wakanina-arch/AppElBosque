@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import "./Finalizacion.css";
 import PaymentForm from "./PaymentForm";
@@ -25,28 +24,10 @@ export default function Finalizacion({ carrito }) {
           <div className="steps">
             <div className="step">
               <div>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                    gap: '0.2rem',
-                    margin: '0.5rem 0',
-                    background: '#f5f5f5',
-                    color: '#105652',
-                    border: '1.5px solid #b2cfc7',
-                    borderRadius: '20px',
-                    padding: '0.8rem 1.1rem 0.7rem 1.1rem',
-                    boxShadow: '0 2px 8px rgba(16,86,82,0.10)',
-                    width: 'fit-content',
-                    minWidth: 260
-                  }}
-                >
-                  <div style={{ fontWeight: 700, fontSize: '1.05rem', color: '#105652', marginBottom: 6, letterSpacing: '0.2px' }}>
-                    TICKET DE COMPRA
-                  </div>
+                <div className="ticket-compra-box">
+                  <div className="ticket-title">TICKET DE COMPRA</div>
                   {carrito.length === 0 && (
-                    <div style={{ color: '#b00', fontWeight: 500, marginBottom: 8 }}>No hay productos en el carrito.</div>
+                    <div className="ticket-alert">No hay productos en el carrito.</div>
                   )}
                   {carrito.map((prod, idx) => (
                     <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', width: '100%', fontSize: '1rem', marginBottom: 4 }}>
@@ -54,8 +35,8 @@ export default function Finalizacion({ carrito }) {
                       <span style={{ fontWeight: 600 }}>${prod.precio?.toFixed(2)}</span>
                     </div>
                   ))}
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%', marginTop: 8 }}>
-                    <label className="price small" style={{ fontWeight: 700, fontSize: '1.3rem', color: '#105652', alignSelf: 'flex-end' }}>Total: ${subtotal.toFixed(2)}</label>
+                  <div className="ticket-total">
+                    <label className="price small">Total: ${subtotal.toFixed(2)}</label>
                   </div>
                 </div>
               </div>

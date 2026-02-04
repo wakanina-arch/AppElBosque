@@ -99,7 +99,7 @@ export default function Bebidas({ agregarAlCarrito }) {
             }
             onClick={() => setSeleccionada(idx)}
           >
-            <span style={{ marginBottom: '0.5rem', color: '#0c0b0b', fontWeight: 600, fontSize: '1.1rem', textAlign: 'center' }}>{bebida.nombre}</span>
+            <span style={{ marginBottom: '0.5rem', color: '#c9c3c3', fontWeight: 600, fontSize: '1.1rem', textAlign: 'center' }}>{bebida.nombre}</span>
             <img src={bebida.img} alt={bebida.nombre + ' Bebida'} />
           </div>
         ))}

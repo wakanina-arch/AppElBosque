@@ -103,7 +103,7 @@ export default function Ensaladas({ agregarAlCarrito }) {
             }
             onClick={() => setSeleccionada(idx)}
           >
-            <span style={{ marginBottom: '0.5rem', color: '#0c0b0b', fontWeight: 600, fontSize: '1.1rem', textAlign: 'center' }}>{ensalada.nombre}</span>
+            <span style={{ marginBottom: '0.5rem', color: '#dfd9d9', fontWeight: 600, fontSize: '1.1rem', textAlign: 'center' }}>{ensalada.nombre}</span>
             <img src={ensalada.img} alt={ensalada.nombre + ' Ensalada'} />
           </div>
         ))}
@@ -125,18 +125,20 @@ export default function Ensaladas({ agregarAlCarrito }) {
         }}
           onClick={() => setSeleccionada(null)}
         >
-          <div style={{
-            background: 'none',
-            borderRadius: 18,
-            padding: 0,
-            minWidth: 320,
-            maxWidth: 400,
-            boxShadow: '0 4px 32px #000a',
-            position: 'relative',
-            textAlign: 'center',
-            zIndex: 10000,
-            overflow: 'hidden'
-          }}
+          <div
+            style={{
+              background: 'none',
+              borderRadius: 18,
+              padding: 0,
+              minWidth: 'min(320px, 90vw)',
+              maxWidth: 'min(400px, 95vw)',
+              width: '95vw',
+              boxShadow: '0 4px 32px #000a',
+              position: 'relative',
+              textAlign: 'center',
+              zIndex: 10000,
+              overflow: 'visible',
+            }}
             onClick={e => e.stopPropagation()}
           >
             <button onClick={() => setSeleccionada(null)} style={{
@@ -153,7 +155,7 @@ export default function Ensaladas({ agregarAlCarrito }) {
             {/* Parte superior: solo imagen */}
             <div style={{
               background: '#181818',
-              padding: '2rem 2rem 1rem 2rem',
+              padding: 'max(1rem, 4vw) max(1rem, 4vw) max(0.5rem, 2vw) max(1rem, 4vw)',
               borderTopLeftRadius: 18,
               borderTopRightRadius: 18,
               color: '#fff',
@@ -163,25 +165,25 @@ export default function Ensaladas({ agregarAlCarrito }) {
               position: 'relative',
               overflow: 'visible',
             }}>
-              <img src={ensaladas[seleccionada].img} alt={ensaladas[seleccionada].nombre} style={{ width: 240, height: 240, objectFit: 'cover', borderRadius: 16, marginBottom: 0 }} />
+              <img src={ensaladas[seleccionada].img} alt={ensaladas[seleccionada].nombre} style={{ width: 'min(240px, 60vw)', height: 'min(240px, 60vw)', objectFit: 'cover', borderRadius: 16, marginBottom: 0 }} />
               {aniadido && (
                 <span className="aniadido-float">¡Añadido!</span>
               )}
             </div>
             {/* Parte inferior: nombre, precio y características */}
             <div style={{
-              background: '#fff',
-              color: '#181818',
-              padding: '2rem',
-              borderBottomLeftRadius: 18,
-              borderBottomRightRadius: 18,
-              minHeight: 120,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-            }}>
+                      background: '#fff',
+                      color: '#181818',
+                      padding: 'max(1.2rem, 4vw)',
+                      borderBottomLeftRadius: 18,
+                      borderBottomRightRadius: 18,
+                      minHeight: 120,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      position: 'relative',
+                    }}>
               <h3 style={{ margin: '0 0 12px 0', fontWeight: 700, fontSize: '1.3rem', textAlign: 'center'}}>Ensalada {ensaladas[seleccionada].nombre}</h3>
               <div style={{ fontWeight: 700, fontSize: '1.2rem', marginBottom: 8 }}>{ensaladas[seleccionada].valor}</div>
               <div style={{ fontSize: '1rem', marginBottom: 8, textAlign: 'center' }}>{ensaladas[seleccionada].caracteristicas}</div>

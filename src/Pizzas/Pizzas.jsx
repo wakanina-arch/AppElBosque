@@ -95,7 +95,7 @@ function Pizzas({ agregarAlCarrito }) {
             }
             onClick={() => setSeleccionada(idx)}
           >
-            <span style={{ marginBottom: '0.5rem', color: '#0c0b0b', fontWeight: 600, fontSize: '1.1rem', textAlign: 'center' }}>{pizza.nombre}</span>
+            <span style={{ marginBottom: '0.5rem', color: '#cec7c7', fontWeight: 600, fontSize: '1.1rem', textAlign: 'center' }}>{pizza.nombre}</span>
             <img src={pizza.img} alt={pizza.nombre + ' Pizza'} />
           </div>
         ))}
@@ -117,18 +117,20 @@ function Pizzas({ agregarAlCarrito }) {
         }}
           onClick={() => setSeleccionada(null)}
         >
-          <div style={{
-            background: 'none',
-            borderRadius: 18,
-            padding: 0,
-            minWidth: 320,
-            maxWidth: 400,
-            boxShadow: '0 4px 32px #000a',
-            position: 'relative',
-            textAlign: 'center',
-            zIndex: 10000,
-            overflow: 'visible'
-          }}
+          <div
+            style={{
+              background: 'none',
+              borderRadius: 18,
+              padding: 0,
+              minWidth: 'min(320px, 90vw)',
+              maxWidth: 'min(400px, 95vw)',
+              width: '95vw',
+              boxShadow: '0 4px 32px #000a',
+              position: 'relative',
+              textAlign: 'center',
+              zIndex: 10000,
+              overflow: 'visible',
+            }}
             onClick={e => e.stopPropagation()}
           >
             <button onClick={() => setSeleccionada(null)} style={{
@@ -145,7 +147,7 @@ function Pizzas({ agregarAlCarrito }) {
             {/* Parte superior: solo imagen */}
             <div style={{
               background: '#181818',
-              padding: '2rem 2rem 1rem 2rem',
+              padding: 'max(1rem, 4vw) max(1rem, 4vw) max(0.5rem, 2vw) max(1rem, 4vw)',
               borderTopLeftRadius: 18,
               borderTopRightRadius: 18,
               color: '#fff',
@@ -155,7 +157,7 @@ function Pizzas({ agregarAlCarrito }) {
               position: 'relative',
               overflow: 'visible',
             }}>
-              <img src={pizzas[seleccionada].img} alt={pizzas[seleccionada].nombre} style={{ width: 240, height: 240, objectFit: 'cover', borderRadius: 16, marginBottom: 0 }} />
+              <img src={pizzas[seleccionada].img} alt={pizzas[seleccionada].nombre} style={{ width: 'min(240px, 60vw)', height: 'min(240px, 60vw)', objectFit: 'cover', borderRadius: 16, marginBottom: 0 }} />
               {aniadido && (
                 <span className="aniadido-float">¡Añadido!</span>
               )}
@@ -164,7 +166,7 @@ function Pizzas({ agregarAlCarrito }) {
                     <div style={{
                       background: '#fff',
                       color: '#181818',
-                      padding: '2rem',
+                      padding: 'max(1.2rem, 4vw)',
                       borderBottomLeftRadius: 18,
                       borderBottomRightRadius: 18,
                       minHeight: 120,
