@@ -859,9 +859,35 @@ button:focus, button:focus-visible {
 }
 
 .finalizacion-container {
-    background: #011c01;
-    padding:2rem
-}.container {
+        background: #011c01;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+.finalizacion-superior {
+        width: 100%;
+        max-width: 800px;
+        padding: 2rem 2rem 1rem 2rem;
+        box-sizing: border-box;
+}
+.finalizacion-inferior {
+        width: 100%;
+        max-width: 800px;
+        padding: 2rem 2rem 1rem 2rem;
+        box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .finalizacion-superior, .finalizacion-inferior {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        max-width: 98vw;
+    }
+}
+.container {
     grid-template-columns: auto;
     gap: 0;
     display:grid
